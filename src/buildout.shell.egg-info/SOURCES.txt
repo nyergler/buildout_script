@@ -1,0 +1,7 @@
+README
+setup.py
+buildout.shell.egg-info/PKG-INFO
+buildout.shell.egg-info/SOURCES.txt
+buildout.shell.egg-info/dependency_links.txt
+buildout.shell.egg-info/entry_points.txt
+buildout.shell.egg-info/top_level.txt
