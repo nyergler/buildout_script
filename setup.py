@@ -18,13 +18,14 @@
 ## FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 ## DEALINGS IN THE SOFTWARE.
 
+import os
 from setuptools import setup, find_packages
 
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(
-    name = "buildout.script",
+    name = "buildout_script",
     version = "0.1",
     
     packages = find_packages('src'),
@@ -50,7 +51,7 @@ setup(
          '********\n'
          ),
     license = 'MIT License',
-    url = 'http://cheeseshop.python.org/pypi/buildout.script',
+    url = 'http://cheeseshop.python.org/pypi/buildout_script',
 
     classifiers = [
        'Framework :: Buildout',
