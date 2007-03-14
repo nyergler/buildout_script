@@ -19,3 +19,4 @@
 ## DEALINGS IN THE SOFTWARE.
 
 from script import Script
+from template import Template
