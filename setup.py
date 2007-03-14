@@ -19,29 +19,30 @@
 ## DEALINGS IN THE SOFTWARE.
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(
     name = "buildout_script",
-    version = "0.1",
+    version = "0.2a1",
     
-    packages = find_packages('src'),
-    package_dir = {'':'src'},
+    packages = ['buildout_script'],
     include_package_data = True,
     zip_safe = True,
     
     install_requires = ['setuptools',
                         'zc.buildout'],
     
-    entry_points = {'zc.buildout': ['default = buildout_script:Script'],
+    entry_points = {'zc.buildout': ['default = buildout_script:Script',
+                                    'template = buildout_script:Template'],
                     },
 
     author = 'Nathan R. Yergler',
     author_email = 'nathan@creativecommons.org',
-    description = 'A zc.buildout recipe for generating an executable script.',
+    description = 'zc.buildout recipes for generating script and conf files '
+                  'from templates.',
     long_description=(
          read('README')
          + '\n' +

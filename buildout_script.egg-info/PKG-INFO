@@ -1,7 +1,7 @@
 Metadata-Version: 1.0
 Name: buildout-script
-Version: 0.1
-Summary: A zc.buildout recipe for generating an executable script.
+Version: 0.2a1
+Summary: zc.buildout recipes for generating script and conf files from templates.
 Home-page: http://cheeseshop.python.org/pypi/buildout_script
 Author: Nathan R. Yergler
 Author-email: nathan@creativecommons.org
@@ -107,6 +107,11 @@ Description: ===============
         
         Change History
         **************
+        
+        0.2a1 (2007-03-14)
+        ==================
+        
+        * Implemented ``template`` recipe for creating a non-executable file.
         
         0.1 (2006-12-12)
         ================
