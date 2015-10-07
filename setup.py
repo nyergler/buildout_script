@@ -26,15 +26,15 @@ def read(*rnames):
 
 setup(
     name = "buildout_script",
-    version = "0.2a1",
-    
+    version = "0.2a2",
+
     packages = ['buildout_script'],
     include_package_data = True,
     zip_safe = True,
-    
+
     install_requires = ['setuptools',
                         'zc.buildout'],
-    
+
     entry_points = {'zc.buildout': ['default = buildout_script:Script',
                                     'template = buildout_script:Template'],
                     },

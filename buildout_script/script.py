@@ -70,16 +70,16 @@ class Script:
             template_dir = self.options.get('template_dir',
                os.path.join(self.buildout['buildout']['directory'],
                             'templates'))
-            
+
             if os.path.exists(os.path.join(template_dir, template_name)):
-                return file(os.path.join(template_dir, template_name)).read()
+                return open(os.path.join(template_dir, template_name)).read()
 
         # unable to find template, throw an error
         logging.getLogger(self.name).error("Template %s does not exist." %
                                            template_name)
         raise zc.buildout.UserError(
             "The specified template, %s, does not exist" % template_name)
-        
+
     def install(self):
         """Duplicate the template script as the specified target, applying
         Python string formatting first.  The dictionary passed to string
@@ -95,13 +95,13 @@ class Script:
         # write the new script out
         script_fn = os.path.join(self.buildout['buildout']['bin-directory'],
                                  self._target_name)
-        file(script_fn, 'w').write(script_template % info_dict)
+        open(script_fn, 'w').write(script_template.format(**info_dict))
 
         # set the permissions to allow execution
         os.chmod(script_fn, os.stat(script_fn).st_mode|
                  stat.S_IXOTH|stat.S_IXGRP|stat.S_IXUSR)
-        
+
         return [script_fn]
 
     update = install
-    
+

@@ -18,5 +18,5 @@
 ## FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 ## DEALINGS IN THE SOFTWARE.
 
-from script import Script
-from template import Template
+from .script import Script
+from .template import Template

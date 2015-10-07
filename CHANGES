@@ -1,6 +1,11 @@
 Change History
 **************
 
+0.2a2 (2015-10-07)
+==================
+
+* Fixes to make recipe work with modern pythons (>2.7)
+
 0.2a1 (2007-03-14)
 ==================
 
