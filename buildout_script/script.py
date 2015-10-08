@@ -22,11 +22,13 @@
 (potentially) from the buildout.cfg."""
 
 import os
+import re
 import stat
 import logging
 
 import zc.buildout
 import pkg_resources
+
 
 class Script:
 
@@ -87,21 +89,18 @@ class Script:
         the part options."""
 
         script_template = self._get_template(self._template_name)
-
-        info_dict = self.buildout['buildout'].copy()
-        info_dict.update(self.options)
-        info_dict.update({'part-name':self.name})
-
         # write the new script out
         script_fn = os.path.join(self.buildout['buildout']['bin-directory'],
                                  self._target_name)
-        open(script_fn, 'w').write(script_template.format(**info_dict))
+        # add prefix to vars in our 'own' part, so options._sub can process them
+        # borrowed from collective.recipe.template
+        script_template = re.sub(r"\$\{([^:]+?)\}", r"${%s:\1}" % self.name, script_template)
+        open(script_fn, 'w').write(self.options._sub(script_template, []))
 
         # set the permissions to allow execution
-        os.chmod(script_fn, os.stat(script_fn).st_mode|
-                 stat.S_IXOTH|stat.S_IXGRP|stat.S_IXUSR)
+        os.chmod(script_fn, os.stat(script_fn).st_mode |
+                 stat.S_IXOTH | stat.S_IXGRP | stat.S_IXUSR)
 
         return [script_fn]
 
     update = install
-
