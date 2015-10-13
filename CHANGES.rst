@@ -1,6 +1,11 @@
 Change History
 **************
 
+0.3 (2015-10-12)
+================
+
+* PyPI release of changes contributed by jjmurre
+
 0.2a3 (2015-10-08)
 ==================
 
@@ -20,4 +25,3 @@ Change History
 ================
 
 * Initial public release
-
