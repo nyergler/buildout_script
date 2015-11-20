@@ -1,6 +1,11 @@
 Change History
 **************
 
+0.3.1 (2015-11-20)
+==================
+
+* Added MANIFEST.in (because CHANGES.rst is not included in tarball and it is referenced in setup.py)
+
 0.2a3 (2015-10-08)
 ==================
 

@@ -26,7 +26,7 @@ def read(*rnames):
 
 setup(
     name = "buildout_script",
-    version = "0.2a3",
+    version = "0.3.1",
 
     packages = ['buildout_script'],
     include_package_data = True,
