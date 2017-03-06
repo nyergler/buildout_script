@@ -1,6 +1,14 @@
 Change History
 **************
 
+
+0.3.1 (2017-03-06)
+==================
+
+* Fix packaging issues
+
+  CHANGES.rst was referenced by setup.py, but not included in the package.
+
 0.3 (2015-10-12)
 ================
 
